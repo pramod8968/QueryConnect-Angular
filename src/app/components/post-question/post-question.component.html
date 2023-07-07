@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-body mt-5">
+        <i><h2><u>POST YOUR QUESTIONS HERE</u></h2></i>
+            <div class="row">
+                <div class="col-md-10">
+                    <label>
+                        <b>Title:</b>
+                    </label>
+                    <div class="mt-2">
+                        <input type="text" id="title" class="form-control" [(ngModel)]="question.title" placeholder="Title">
+                    </div>
+        
+                    <div class="mt-2">
+                        <label>
+                            <b>Description:</b>
+                        </label>
+                        <textarea placeholder="Elaborate your doubt here..." class="form-control" [(ngModel)]="question.description"  rows="8" cols="51"></textarea>
+                    </div>
+        
+                    <div class="mt-2">
+                        <button type="button" id="submit-btn" class="btn btn-primary" class="btn btn-primary" (click)="postQuestion()">Submit</button>
+                    </div>
+        
+                </div>
+            </div>
+    </div>
+  </div>
+  

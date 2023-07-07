@@ -1,0 +1,38 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    background-color: #fff;
+    margin: 1.25rem 0 1.25rem 0;
+    box-shadow: 0 .25rem .5rem #e6edef;
+    margin-left: 15%;
+    
+    
+}
+
+.card-body {
+    padding: 1rem 1.5rem; 
+    height: 100%;
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+}
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  } */
+  
+  /* .col-2 {
+    grid-column: span 2;
+  }
+  
+  .col-8 {
+    grid-column: span 8;
+  } */
+  
+  /* .form-input {
+    width: 100%;
+    box-sizing: border-box;
+  } */
+  

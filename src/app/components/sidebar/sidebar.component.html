@@ -1,0 +1,17 @@
+
+    <!--Top menu -->
+    <div class="sidebar mt-4">
+
+        <div class="profile">
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="profile_picture">
+            <h3>Pramod Bhat</h3>
+        </div>
+
+        <ul>
+            <li [class.active]="isActive('profile')" (click)="activate('profile')" routerLink="/">Home</li>
+            <li [class.active]="isActive('postedQuestions')" (click)="activate('postedQuestions')" routerLink="/postedQuestion">Posted Questions</li>
+            <li [class.active]="isActive('postQuestion')" (click)="activate('postQuestion')" routerLink="/postQuestion">Post a Question</li>
+            <li [class.active]="isActive('about')" (click)="activate('settings')">About</li>
+            <li [class.active]="isActive('help')" (click)="activate('settings')">Help</li>
+          </ul>
+    </div>

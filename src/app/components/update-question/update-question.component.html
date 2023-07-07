@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-body mt-5">
+        <i><h2><u>UPDATE YOUR QUESTION HERE</u></h2></i>
+            <div class="row">
+                <div class="col-md-10">
+                    <label>
+                        <b>Title:</b>
+                    </label>
+                    <div class="mt-2">
+                        <input type="text" id="title" class="form-control" [(ngModel)]="questionData.title"  placeholder="Title">
+                    </div>
+        
+                    <div class="mt-2">
+                        <label>
+                            <b>Description:</b>
+                        </label>
+                        <textarea placeholder="Elaborate your doubt here..." class="form-control" [(ngModel)]="questionData.description"  rows="8" cols="51"></textarea>
+                    </div>
+        
+                    <div class="mt-2">
+                        <button type="submit" id="submit-btn"  class="btn btn-primary" routerLink="/postedQuestion" (click)="updateQuestion()" >Update</button>
+                    </div>
+        
+                </div>
+            </div>
+    </div>
+  </div>
+  
+

@@ -1,0 +1,55 @@
+<div class="card">
+    <div class="card-body">
+
+      <div class="row mt-2">
+        <div class="col-md-10" *ngFor="let question of questions; ; let i = index">
+            <div class="card">
+                <div class="card-body">
+                    <b><h4 class="card-title">Title: {{question.title}}</h4></b>
+                    <p class="card-text">Description: {{question.description}}</p>
+
+                    <div class="buttons"> 
+                      <div class="text-end">
+                        <!-- <button type="button" class="btn btn-primary" (click)="deleteAnswer(answer.answerId)">Edit</button> -->
+                        <button type="button" class="btn btn-primary" routerLink="/updateQuestion/{{question.questionId}}">Edit</button>
+                        <button type="button" class="btn btn-danger" (click)="deleteQuestion(question.questionId)">Delete</button>
+
+                      </div>  
+                    </div>
+
+                </div>
+                <hr>
+                <h4 class="content"><u>ANSWERS:</u></h4>
+                <div class="content" *ngFor="let answer of question.listOfAnswers">
+                  <hr>
+                    <p class="content">{{ answer.description }}</p>
+
+                    <div class="buttons"> 
+                      <div class="text-end">
+                        <!-- <button type="button" class="btn btn-primary" (click)="deleteAnswer(answer.answerId)">Edit</button> -->
+                        <button type="button" class="btn btn-danger" (click)="deleteAnswer(answer.answerId)">Delete</button>
+
+                      </div>  
+                    </div>
+                    
+                  <hr>
+                </div>
+                <hr>
+                  <div class="mt-2">
+                    <!-- <input type="hidden" class="form-control" [(ngModel)]="answer.questionId" [value]="question.questionId"> -->
+                    <!-- class="form-control" [(ngModel)]="answer.description" -->
+                    <textarea placeholder="Elaborate your solution here..." class="form-control" #answer rows="2"></textarea>
+                  </div>
+
+                  <div class="answer-btn mt-2">
+                    <button type="button" class="btn btn-primary" (click)="submitAnswer(answer.value, question.questionId)">Submit</button>
+                  </div>
+              
+                <br>
+                
+            </div>
+        </div>
+    </div>
+
+    </div>
+  </div>
