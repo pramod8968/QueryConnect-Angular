@@ -1,18 +1,29 @@
 <div class="card">
     <div class="card-body">
-
+      
       <div class="row mt-2">
-        <div class="col-md-10" *ngFor="let question of questions; ; let i = index">
+
+        
+          <div class="search-bar d-flex justify-content-center mt-5">
+            <input type="search" id="search-input" placeholder=" Search Your Question Here..." [(ngModel)]="searchedText" (input)="getSearchText()" aria-label="Search">
+          </div>
+        
+
+        <div class="col-md-10" *ngFor="let question of questions;">
+          
+          <div class="filtering" *ngIf="searchedText === '' || question.title.toLowerCase().includes(searchedText.toLowerCase()) || question.description.toLowerCase().includes(searchedText.toLowerCase())">
+
             <div class="card">
                 <div class="card-body">
-                    <b><h4 class="card-title">Title: {{question.title}}</h4></b>
+                    <h4 class="card-title">Title: {{question.title}}</h4>
                     <p class="card-text">Description: {{question.description}}</p>
 
                     <div class="buttons"> 
                       <div class="text-end">
                         <!-- <button type="button" class="btn btn-primary" (click)="deleteAnswer(answer.answerId)">Edit</button> -->
-                        <button type="button" class="btn btn-primary" routerLink="/updateQuestion/{{question.questionId}}">Edit</button>
-                        <button type="button" class="btn btn-danger" (click)="deleteQuestion(question.questionId)">Delete</button>
+                        
+                        <button type="button" class="btn btn-primary" id="edit-question" routerLink="/updateQuestion/{{question.questionId}}">Edit</button>
+                        <button type="button" class="btn btn-danger" id="delete-question" (click)="deleteQuestion(question.questionId)">Delete</button>
 
                       </div>  
                     </div>
@@ -24,10 +35,22 @@
                   <hr>
                     <p class="content">{{ answer.description }}</p>
 
+                    <div class="voting">
+                      <button id="like-btn" (click)="like(answer.answerId)">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                      </button>
+                      <input type="number" id="input-1" value="{{answer.likesCount}}">
+                      
+                      <button id="dislike-btn" (click)="disLike(answer.answerId)">
+                        <i class="fa-regular fa-thumbs-down"></i>
+                      </button>
+                      <input type="number" id="input-2" value="{{answer.disLikesCount}}">
+                    </div>
+                    
                     <div class="buttons"> 
                       <div class="text-end">
-                        <!-- <button type="button" class="btn btn-primary" (click)="deleteAnswer(answer.answerId)">Edit</button> -->
-                        <button type="button" class="btn btn-danger" (click)="deleteAnswer(answer.answerId)">Delete</button>
+                        <button type="button" class="btn btn-primary" id="edit-answer" routerLink="/editAnswer/{{answer.answerId}}">Edit</button>
+                        <button type="button" class="btn btn-danger" id="delete-answer" (click)="deleteAnswer(answer.answerId)">Delete</button>
 
                       </div>  
                     </div>
@@ -49,6 +72,9 @@
                 
             </div>
         </div>
+
+      </div>
+
     </div>
 
     </div>

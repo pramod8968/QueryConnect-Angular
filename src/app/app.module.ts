@@ -14,6 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostQuestionComponent } from './components/post-question/post-question.component';
 import { PostedQuestionsComponent } from './components/posted-questions/posted-questions.component';
 import { UpdateQuestionComponent } from './components/update-question/update-question.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { EditAnswerComponent } from './components/edit-answer/edit-answer.component';
+
 
 @NgModule({
   declarations: [
@@ -24,13 +28,16 @@ import { UpdateQuestionComponent } from './components/update-question/update-que
     HomeComponent,
     PostQuestionComponent,
     PostedQuestionsComponent,
-    UpdateQuestionComponent
+    UpdateQuestionComponent,
+    EditAnswerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

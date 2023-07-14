@@ -15,10 +15,16 @@ export class PostQuestionComponent {
 
   postQuestion(){
     console.log(this.question);
-    return this.service.PostQuestion(this.question).subscribe((data)=>{
-      console.log(data);
-      this.clearForm();
-    })
+    return this.service.PostQuestion(this.question).subscribe(
+      (data)=>{
+        console.log(data);
+        this.clearForm();
+      },
+      (error)=>{
+        console.error(error);
+        alert("Error Occured: "+error.message);
+      }
+    );
   }
   
 

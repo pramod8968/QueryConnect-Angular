@@ -19,6 +19,14 @@
     padding: 10px;
 }
 
+#delete-question{
+    margin-left: 10px; 
+}
+
+#delete-answer{
+    margin-left: 10px;
+}
+
 .answer-btn{
     margin-left: 10px;
 }
@@ -27,3 +35,37 @@
     margin: 0 auto;
     display: inline;
 }
+
+
+#input-1, #input-2 {
+    width: 50px;
+    border: none;
+    background: none;
+    /* color: #919191; */
+    font-size: 20px;
+    margin: 0 10px;
+    pointer-events: none;
+}
+
+#like-btn, #dislike-btn{
+    border: none;
+    font-size: 23px;
+}
+
+#like-btn:active, #dislike-btn:active{
+    color: #004eff;
+    transform: scale(1.2);
+}
+
+
+#search-input{
+    height: 40px;
+    width: 50%;
+    box-shadow: 10px 10px rgb(206, 206, 206);
+    border-radius: 5px;
+    
+}
+
+
+
+
